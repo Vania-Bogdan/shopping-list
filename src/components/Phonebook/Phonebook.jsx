@@ -58,7 +58,7 @@ class Phonebook extends React.Component{
     render() {
         const { filter } = this.state;
         const visibleContacts = this.getVisibleContact();
-        if (visibleContacts.length === 0) {
+        if (this.state.contacts.length === 0) {
             return (
                 <Book>
                     <h1>Phonebook</h1>
