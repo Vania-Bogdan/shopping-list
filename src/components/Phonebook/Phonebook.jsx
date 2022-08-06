@@ -49,6 +49,22 @@ class Phonebook extends React.Component{
             contact.name.toLowerCase().includes(normalizedFilter));
     };
 
+    componentDidMount() {
+    // вызывается один раз при монтировании компонента
+        const contacts = localStorage.getItem('contacts');
+        const parsedContacts = JSON.parse(contacts);
+        if (parsedContacts) {
+            this.setState({contacts: parsedContacts})
+        }
+    }
+
+    componentDidUpdate(prevState) {
+    // Вызывается после каждого обновления
+    if (this.state.contacts !== prevState.contacts) {
+        localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+    }
+
     render() {
         const { filter } = this.state;
         const visibleContacts = this.getVisibleContact();
