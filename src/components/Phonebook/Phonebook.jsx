@@ -3,7 +3,7 @@ import AddForm from "components/AddForm/AddForm";
 import ContactList from "components/ContactList/ContactList";
 import Filter from "components/Filter/Filter";
 
-import shortid from "shortid";
+import { nanoid } from 'nanoid'
 import styled from "styled-components";
 
 class Phonebook extends React.Component{
@@ -16,7 +16,6 @@ class Phonebook extends React.Component{
         ],  
         filter: ''
     };
-    generateIdContact = shortid.generate();
 
     addContact = ({ name, number }) => {
         this.setState(({ contacts }) => {
@@ -27,7 +26,7 @@ class Phonebook extends React.Component{
                 return contacts;
             } else {
                 const newContact = {
-                    id: this.generateIdContact,
+                    id: nanoid(),
                     name,
                     number,
                 };
