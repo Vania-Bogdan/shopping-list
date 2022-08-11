@@ -68,26 +68,20 @@ class Phonebook extends React.Component{
     render() {
         const { filter } = this.state;
         const visibleContacts = this.getVisibleContact();
-        if (this.state.contacts.length === 0) {
-            return (
-                <Book>
+        return (
+            <Book>
                     <h1>Phonebook</h1>
                     <AddForm onSubmit={this.addContact} />
                     <h2>Contacts</h2>
-                    <p>No contacts found</p>
-                </Book>
-            )
-        } else {
-            return (
-                <Book>
-                    <h1>Phonebook</h1>
-                    <AddForm onSubmit={this.addContact} />
-                    <h2>Contacts</h2>
-                    <Filter value={filter} onChange={this.onChangeFilter} />
-                    <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact} />
-                </Book>
-            )
-        }
+                    {this.state.contacts.length === 0 ?
+                    <p>No contacts found</p> : 
+                    <div>
+                        <Filter value={filter} onChange={this.onChangeFilter} />
+                        <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact} />
+                    </div>
+                    }
+            </Book>
+        );
     }
 }
 
