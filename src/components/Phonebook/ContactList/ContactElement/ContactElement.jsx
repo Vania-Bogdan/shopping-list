@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ContactElement = ({ name, number, id, onDeleteContact }) => {
+const ContactElement = ({ name, number, id, onRemoveContact }) => {
   return (
     <Li key={id}>
         <p>{name + ": " + number}</p>
-      <Btn onClick={()=>onDeleteContact(id)}>Delete</Btn>
-      </Li>
+        <Btn onClick={()=>onRemoveContact(id)}>Delete</Btn>
+    </Li>
   );
 };
 

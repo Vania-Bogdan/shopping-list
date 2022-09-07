@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 
-const Filter = ({ value, onChange }) => (
+const Filter = ({ filter, onSetFilter }) => (
   <Label>
     Find contacts by name
-    <Input type="text" name="filter" value={value} onChange={onChange} />
+    <Input type="text" name="filter" value={filter} onChange={onSetFilter} />
   </Label>
 );
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 const Label = styled.label`

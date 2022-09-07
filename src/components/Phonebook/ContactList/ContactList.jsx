@@ -4,10 +4,10 @@ import ContactElement from './ContactElement/ContactElement';
 
 import styled from "styled-components";
 
-const ContactList = ({ contacts, onDeleteContact }) => (
+const ContactList = ({ contacts, onRemoveContact }) => (
     <Ul>
         {contacts.map(({ name, number, id }) => (
-            <ContactElement name={name} number={number} id={id} onDeleteContact={onDeleteContact} />
+            <ContactElement name={name} number={number} id={id} onRemoveContact={onRemoveContact} />
         ))}
     </Ul>
 );
