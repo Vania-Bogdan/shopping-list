@@ -1,4 +1,3 @@
-// import useLocalStorage from "hooks/localStorage";
 import AddForm from "./AddForm/AddForm";
 import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
@@ -6,63 +5,14 @@ import Filter from "./Filter/Filter";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
-import { addContact, removeContact, setFilter } from "redux/actions";
 
-import { getFilteredContacts, getFilter } from "redux/selectors";
+import { addContact, removeContact } from "redux/contacts/con-slice";
+import { setFilter } from "redux/filter/filter-slice";
+
+import { getFilteredContacts } from "redux/contacts/con-selectors";
+import { getFilter } from "redux/filter/filter-selectors";
 
 export default function Phonebook() {
-
-    // const [contacts, setContacts] = useLocalStorage('contacts', []);
-    // const [filter, setFilter] = useState('');
-
-    // const addContact = ({ name, number }) => {
-    //     const isContact = contacts.find(contact => contact.name === name);
-    //         if (isContact) {
-    //             alert(`${name} is already in contact`);
-    //             setContacts(contacts);
-    //         } else {
-    //             setContacts([
-    //                 {
-    //                 id: nanoid(),
-    //                 name,
-    //                 number,
-    //                 },
-    //                 ...contacts,])
-    //         }
-    // };
-
-    // const deleteContact = (contactId) => {
-    //     setContacts(contacts => (
-    //         contacts.filter(contact => contact.id !== contactId)
-    //     ));
-    // };
-
-    // const onChangeFilter = (e) => {
-    //     setFilter(e.currentTarget.value);
-    // };
-
-    
-    // const getVisibleContact = () => {
-    //     const normalizedFilter = filter.toLowerCase();
-    //     return contacts.filter(contact =>
-    //     contact.name.toLowerCase().includes(normalizedFilter));
-    // };
-
-    // useEffect(() => {
-    // // в классах это componentDidMount
-    // const contacts = localStorage.getItem('contacts');
-    // const parsedContacts = JSON.parse(contacts);
-    // if (parsedContacts) {
-    //     setContacts(parsedContacts);
-    // }
-    // }, [setContacts]);
-
-    // useEffect(() => {
-    // // в классах это componentDidUpdate
-    // window.localStorage.setItem('contacts', JSON.stringify(contacts));
-    // }, [contacts]);
-
-    // console.log(contacts);
 
     const dispatch = useDispatch()
 
@@ -86,13 +36,13 @@ export default function Phonebook() {
                     <h1>Phonebook</h1>
                     <AddForm onSubmit={onAddContact} />
                     <h2>Contacts</h2>
-                    {/* {contacts.length === 0 ?
-                    <p>No contacts found</p> :  */}
+                    <Filter filter={filter} onSetFilter={onSetFilter} />
+                    {contacts.length === 0 ?
+                    <p>No contacts found</p> : 
                     <div>
-                        <Filter filter={filter} onSetFilter={onSetFilter} />
                         <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
                     </div>
-                    {/* } */}
+                    }
             </Book>
         );
 };
