@@ -17,7 +17,12 @@ export default function Phonebook() {
     const dispatch = useDispatch()
 
     const onAddContact = (payload) => {
-        dispatch(addContact(payload))
+        const isContact = contacts.find(item => item.name.toLowerCase() === payload.name.toLowerCase());
+            if (isContact) {
+                alert(`${payload.name} is already in contact`);
+            } else {
+                dispatch(addContact(payload))
+            }
     }
 
     const onRemoveContact = (payload) => {
