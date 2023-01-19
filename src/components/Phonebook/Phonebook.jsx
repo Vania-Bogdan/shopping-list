@@ -10,6 +10,8 @@ import { setFilter } from "redux/filter/filter-slice";
 import { getFilteredContacts } from "redux/contacts/con-selectors";
 import { getFilter } from "redux/filter/filter-selectors";
 
+import "../../css/styles.css"
+
 export default function Phonebook() {
 
     const dispatch = useDispatch()
