@@ -36,7 +36,7 @@ const Btn = styled.button`
     justify-content: center;
     align-items: center;
     margin-right: 50px;
-    background: rgb(255, 100, 100);
+    background: rgb(255, 101, 101);
     padding: 0;
     :hover, :focus {
     color: white;
