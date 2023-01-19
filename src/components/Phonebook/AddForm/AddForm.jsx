@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 class AddForm extends React.Component {
     state = {
@@ -20,11 +19,12 @@ class AddForm extends React.Component {
     }
     render() {
         return (
-            <Form onSubmit={this.onSubmitForm}>
+            <form className="add-form" onSubmit={this.onSubmitForm}>
                 <div>
                 <label>
-                <H3>Name</H3>
-                <Input
+                <h3 className="form-heading">Name</h3>
+                <input
+                    className="form-input"
                     type="text"
                     name="name"
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -35,8 +35,9 @@ class AddForm extends React.Component {
                 />
                 </label>
                 <label>
-                <H3>Number</H3>
-                <Input
+                <h3 className="form-heading">Number</h3>
+                <input
+                    className="form-input"
                     type="tel"
                     name="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -47,35 +48,10 @@ class AddForm extends React.Component {
                 />
                 </label>
                 </div>
-                <Button type="submit">+</Button>
-            </Form>
+                <button className="form-btn" type="submit">+</button>
+            </form>
         )
     }
 }
-
-const Form = styled.form`
-    border: 4px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;`
-const H3 = styled.h3`
-    margin: 10px;`
-const Input = styled.input`
-    border-radius: 5px;
-    width: 200px;
-    height: 30px;
-    margin: 10px;
-    font-size: 22px;`
-const Button = styled.button`
-    font-size: 90px;
-    width: 200px;
-    margin: 10px;
-    background-color: #83fff5;
-    border: 5px solid #000000;
-    border-radius: 20px;
-    :hover {
-        background: rgb(0, 255, 100);
-    }`
 
 export default AddForm;

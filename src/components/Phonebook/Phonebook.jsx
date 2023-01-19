@@ -2,8 +2,6 @@ import AddForm from "./AddForm/AddForm";
 import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
 
-import styled from "styled-components";
-
 import { useSelector, useDispatch } from "react-redux";
 
 import { addContact, removeContact } from "redux/contacts/con-slice";
@@ -37,7 +35,7 @@ export default function Phonebook() {
     const filter = useSelector(getFilter)
 
     return (
-            <Book>
+            <div className="shopping-book">
                     <h1>Phonebook</h1>
                     <AddForm onSubmit={onAddContact} />
                     <h2>Contacts</h2>
@@ -48,20 +46,6 @@ export default function Phonebook() {
                         <ContactList contacts={contacts} onRemoveContact={onRemoveContact} />
                     </div>
                     }
-            </Book>
+            </div>
         );
 };
-
-const Book = styled.div`
-    border: 5px solid #000000;
-    border-radius: 20px;
-    box-shadow: 10px 10px 8px 2px rgb(0 0 0 / 30%);
-    color: #000000;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 100px auto;
-    padding: 20px;
-    width: 500px;
-    background-color: #00cab9;
-`

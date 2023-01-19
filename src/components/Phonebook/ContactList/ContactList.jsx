@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ContactElement from './ContactElement/ContactElement';
 
-import styled from "styled-components";
-
 const ContactList = ({ contacts, onRemoveContact }) => (
-    <Ul>
+    <ul className='products-list'>
         {contacts.map(({ name, number, id }) => (
             <ContactElement name={name} number={number} id={id} onRemoveContact={onRemoveContact} />
         ))}
-    </Ul>
+    </ul>
 );
 
 ContactList.propTypes = {
@@ -21,8 +19,5 @@ ContactList.propTypes = {
     })
     ),
 };
-
-const Ul = styled.ul`
-padding: 0 0 0 10px;`
 
 export default ContactList;
