@@ -1,21 +1,21 @@
 import { configureStore,combineReducers } from '@reduxjs/toolkit'
 
-import conReducer from './contacts/con-slice'
+import conReducer from './products/prod-slice'
 
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 const rootReducer = combineReducers({
-    contacts: conReducer,
+    products: conReducer,
 })
 
-const contactsPersistConfig = {
-    key: "contacts",
+const productsPersistConfig = {
+    key: "products",
     storage,
-    whitelist: ["contacts"]
+    whitelist: ["products"]
 }
 
-const persistedReducer = persistReducer(contactsPersistConfig, rootReducer)
+const persistedReducer = persistReducer(productsPersistConfig, rootReducer)
 
 export const store = configureStore({
     reducer: persistedReducer

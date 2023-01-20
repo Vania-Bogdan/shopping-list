@@ -1,7 +1,7 @@
-import Phonebook from "./Phonebook/Phonebook";
+import ProductsBook from "./ProductsBook/ProductsBook";
 
 export const App = () => {
   return (
-    <Phonebook />
+    <ProductsBook />
   );
 };

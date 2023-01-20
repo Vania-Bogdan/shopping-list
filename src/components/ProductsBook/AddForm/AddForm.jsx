@@ -3,7 +3,7 @@ import React from "react";
 class AddForm extends React.Component {
     state = {
         name: '',
-        number: ''
+        number: '1'
     }
     onInputChange = e => {
         const { name, value } = e.currentTarget;
@@ -15,7 +15,7 @@ class AddForm extends React.Component {
         this.clearInput()
     };
     clearInput = () => {
-        this.setState({ name: "", number: "" });
+        this.setState({ name: "", number: "1" });
     }
     render() {
         return (
@@ -25,10 +25,9 @@ class AddForm extends React.Component {
                 <h3 className="form-heading">Продукт</h3>
                 <input
                     className="form-input"
-                            type="text"
-                            autocomplete="off"
+                    type="text"
+                    autoComplete="off"
                     name="name"
-                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     title="Enter product name."
                     required
                     value={this.state.name}
@@ -39,12 +38,13 @@ class AddForm extends React.Component {
                 <h3 className="form-heading">Кількість</h3>
                 <input
                     className="form-input"
-                            type="number"
-                            autocomplete="off"
+                    type="number"
+                    autoComplete="off"
                     name="number"
-                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                    title="Enter quantity."
-                    required
+                    min="1"
+                    pattern="^[0-9]+$"
+                    title="Enter products quantity."
+                    // required
                     value={this.state.number}
                     onChange={this.onInputChange}
                 />

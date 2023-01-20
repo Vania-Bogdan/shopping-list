@@ -1,1 +1,0 @@
-export const getProducts = ({ contacts }) => contacts
