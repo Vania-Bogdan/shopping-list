@@ -30,11 +30,11 @@ export default function ProductsBook() {
 
     return (
             <div className="shopping-book">
-                    <h1>Список покупок</h1>
+                    <h1 className="main-heading">Список покупок</h1>
                     <AddForm onSubmit={onAddProduct} />
-                    <h2>Список</h2>
+                    <h2 className="list-heading">Список</h2>
                     {products.length === 0 ?
-                    <p>Список пустий</p> : 
+                    <p>Список пустий, додай продукти.</p> : 
                     <div>
                         <ProductList products={products} onRemoveProduct={onRemoveProduct} />
                     </div>

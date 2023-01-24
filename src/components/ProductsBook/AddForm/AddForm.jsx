@@ -15,13 +15,13 @@ class AddForm extends React.Component {
         this.clearInput()
     };
     clearInput = () => {
-        this.setState({ name: "", number: "1" });
+        this.setState({ name: "", number: '1' });
     }
+
     render() {
         return (
             <form className="add-form" onSubmit={this.onSubmitForm}>
-                <div>
-                <label>
+                <label className="form-label">
                 <h3 className="form-heading">Продукт</h3>
                 <input
                     className="form-input"
@@ -34,23 +34,21 @@ class AddForm extends React.Component {
                     onChange={this.onInputChange}
                 />
                 </label>
-                <label>
-                <h3 className="form-heading">Кількість</h3>
-                <input
-                    className="form-input"
+                <label className="form-label">
+                    <h3 className="form-heading">Кількість</h3>
+                    <input
+                    className="form-input-num"
                     type="number"
                     autoComplete="off"
                     name="number"
                     min="1"
                     pattern="^[0-9]+$"
                     title="Enter products quantity."
-                    // required
                     value={this.state.number}
                     onChange={this.onInputChange}
-                />
+                    />
                 </label>
-                </div>
-                <button className="form-btn" type="submit">+</button>
+                <button className="form-btn" type="submit">Додати</button>
             </form>
         )
     }

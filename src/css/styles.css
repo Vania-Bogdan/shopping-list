@@ -1,69 +1,107 @@
 .shopping-book{
-    border: 5px solid #000000;
-    border-radius: 20px;
-    box-shadow: 10px 10px 8px 2px rgb(0 0 0 / 30%);
     color: #000000;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
-    margin: 100px auto;
-    padding: 20px;
-    width: 500px;
-    background-color: #00cab9;
+    padding: 15px;
+}
+
+.main-heading{
+    margin: 5px 0 30px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .add-form{
-    border: 4px solid black;
-    border-radius: 20px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    border-top: 4px solid #ff7f49;
+    border-bottom: 4px solid #ff7f49;
+    width: 100%;
+}
+.form-label{
+    margin-right: 15px;
 }
 .form-heading{
-    margin: 10px;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+    font-size: 24px;
 }
 .form-input{
     border-radius: 5px;
-    width: 200px;
-    height: 30px;
-    margin: 10px;
-    font-size: 22px;
+    width: 100px;
+    height: 25px;
+    font-size: 20px;
+    margin: 0;
+}
+.form-input-num {
+    border-radius: 5px;
+    width: 30px;
+    height: 25px;
+    font-size: 20px;
+    margin: 0;
 }
 .form-btn{
-    font-size: 90px;
-    width: 200px;
-    margin: 10px;
-    background-color: #83fff5;
-    border: 5px solid #000000;
+    font-size: 22px;
+    font-weight: 700;
+    width: 130px;
+    height: 70px;
+    margin: 0px;
+    padding: 0;
+    background-color: #ff7f49;
+    border: 3px solid #000000;
     border-radius: 20px;
 }
 
+.list-heading{
+    margin: 30px 0 10px 0;
+}
 .products-list{
-    padding: 0 0 0 10px;
+    padding: 0 10px 0 10px;
+    margin: 0;
 }
 .product-box{
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
+    
+}
+.product-content{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-name{
+    margin: 0;
+    font-size: 26px;
 }
 .product-btn{
-    width: 70px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
+    width: 40px;
+    height: 40px;
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
-    background: rgb(255, 100, 100);
+    background: rgb(250, 250, 250);
+    font-size: 30px;
     padding: 0;
-    /* :hover, :focus {
-    color: white;
-    background-color: red;
-    } */
+}
+.active{
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3eb;
+    font-size: 30px;
+    padding: 0;
 }
