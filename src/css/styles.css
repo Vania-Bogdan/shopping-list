@@ -1,5 +1,5 @@
 .shopping-book{
-    color: #000000;
+    color: #f2f0d8;
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -9,6 +9,9 @@
 .main-heading{
     margin: 5px 0 30px 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    color: #f24b4b;
 }
 
 .add-form{
@@ -16,8 +19,8 @@
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    border-top: 4px solid #ff7f49;
-    border-bottom: 4px solid #ff7f49;
+    border-top: 4px solid #f2f0d8;
+    border-bottom: 4px solid #f2f0d8;
     width: 100%;
 }
 .form-label{
@@ -49,13 +52,19 @@
     height: 70px;
     margin: 0px;
     padding: 0;
-    background-color: #ff7f49;
-    border: 3px solid #000000;
+    color: #f2f0d8;
+    background-color: #252422;
+    border: 3px solid #f2f0d8;
     border-radius: 20px;
+}
+
+.form-btn:hover{
+    background: rgb(110, 0, 0);
 }
 
 .list-heading{
     margin: 30px 0 10px 0;
+    color:#f24b4b;
 }
 .products-list{
     padding: 0 10px 0 10px;
@@ -101,7 +110,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #3eb;
+    background: #f24b4b;
     font-size: 30px;
     padding: 0;
 }
