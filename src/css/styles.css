@@ -42,21 +42,29 @@
 .form-input-num {
     border: 2px solid rgb(160, 160, 160);
     border-radius: 10px;
-    width: 25px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     font-size: 20px;
-    margin: 17px 10px 0 0;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .buttons-container{
+    height: 25px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .number-less-button, .number-more-button {
     border-radius: 10px;
     border: 2px solid #fff;
-    width: 33%;
+    width: 30px;
+    height: 30px;
     font-size: 20px;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +78,8 @@
 .form-btn{
     font-size: 22px;
     font-weight: 700;
-    width: 130px;
+    width: 100%;
+    min-width: 60px;
     height: 70px;
     margin: 0px;
     padding: 0;

@@ -63,18 +63,18 @@ class AddForm extends React.Component {
             >
               +
             </button>
+            <input
+              className="form-input-num"
+              type="number"
+              autoComplete="off"
+              name="number"
+              min="1"
+              pattern="^[0-9]+$"
+              title="Enter products quantity."
+              value={this.state.number}
+            />
           </div>
         </label>
-        <input
-          className="form-input-num"
-          type="number"
-          autoComplete="off"
-          name="number"
-          min="1"
-          pattern="^[0-9]+$"
-          title="Enter products quantity."
-          value={this.state.number}
-        />
 
         <button className="form-btn" type="submit">
           Add
