@@ -54,8 +54,7 @@
 .number-less-button, .number-more-button {
     border-radius: 10px;
     border: 2px solid #fff;
-    width: 30px;
-    height: 30px;
+    width: 33%;
     font-size: 20px;
     margin: 0;
     display: flex;
