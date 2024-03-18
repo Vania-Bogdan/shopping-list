@@ -3,19 +3,31 @@ import React from 'react';
 class AddForm extends React.Component {
   state = {
     name: '',
-    number: '1',
+    number: 1,
   };
   onInputChange = e => {
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
   };
+
+  onDecrementNumber = () => {
+    this.setState(prevState => ({
+      number: Math.max(1, prevState.number - 1),
+    }));
+  };
+  onIncrementNumber = () => {
+    this.setState(prevState => ({
+      number: prevState.number + 1,
+    }));
+  };
+
   onSubmitForm = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.clearInput();
   };
   clearInput = () => {
-    this.setState({ name: '', number: '1' });
+    this.setState({ name: '', number: 1 });
   };
 
   render() {
@@ -36,6 +48,13 @@ class AddForm extends React.Component {
         </label>
         <label className="form-label">
           <h3 className="form-heading">Number</h3>
+          <button
+            className="number-less-button"
+            type="button"
+            onClick={this.onDecrementNumber}
+          >
+            -
+          </button>
           <input
             className="form-input-num"
             type="number"
@@ -44,9 +63,16 @@ class AddForm extends React.Component {
             min="1"
             pattern="^[0-9]+$"
             title="Enter products quantity."
+            readOnly
             value={this.state.number}
-            onChange={this.onInputChange}
           />
+          <button
+            className="number-more-button"
+            type="button"
+            onClick={this.onIncrementNumber}
+          >
+            +
+          </button>
         </label>
         <button className="form-btn" type="submit">
           Add

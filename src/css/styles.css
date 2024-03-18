@@ -40,10 +40,25 @@
 }
 .form-input-num {
     border-radius: 5px;
-    width: 30px;
+    width: 25px;
     height: 25px;
     font-size: 20px;
     margin: 0;
+}
+.number-less-button, .number-more-button {
+    border-radius: 5px;
+    border: 2px solid #fff;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0;
+    padding: auto;
+}
+.number-less-button{
+    background-color: rgb(255, 55, 55);
+}
+.number-more-button {
+    background-color: rgb(55, 255, 55);
 }
 .form-btn{
     font-size: 22px;
