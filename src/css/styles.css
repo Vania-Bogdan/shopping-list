@@ -24,7 +24,7 @@
     width: 100%;
 }
 .form-label{
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .form-heading{
     margin: 0 0 10px 0;
@@ -45,6 +45,12 @@
     font-size: 20px;
     margin: 0;
 }
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10px;
+}
 .number-less-button, .number-more-button {
     border-radius: 5px;
     border: 2px solid #fff;
@@ -52,13 +58,15 @@
     height: 30px;
     font-size: 20px;
     margin: 0;
-    padding: auto;
-}
-.number-less-button{
-    background-color: rgb(255, 55, 55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .number-more-button {
     background-color: rgb(55, 255, 55);
+}
+.number-less-button{
+    background-color: rgb(255, 55, 55);
 }
 .form-btn{
     font-size: 22px;

@@ -48,13 +48,6 @@ class AddForm extends React.Component {
         </label>
         <label className="form-label">
           <h3 className="form-heading">Number</h3>
-          <button
-            className="number-less-button"
-            type="button"
-            onClick={this.onDecrementNumber}
-          >
-            -
-          </button>
           <input
             className="form-input-num"
             type="number"
@@ -63,9 +56,10 @@ class AddForm extends React.Component {
             min="1"
             pattern="^[0-9]+$"
             title="Enter products quantity."
-            readOnly
             value={this.state.number}
           />
+        </label>
+        <div className="buttons-container">
           <button
             className="number-more-button"
             type="button"
@@ -73,7 +67,14 @@ class AddForm extends React.Component {
           >
             +
           </button>
-        </label>
+          <button
+            className="number-less-button"
+            type="button"
+            onClick={this.onDecrementNumber}
+          >
+            -
+          </button>
+        </div>
         <button className="form-btn" type="submit">
           Add
         </button>
