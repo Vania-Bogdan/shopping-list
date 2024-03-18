@@ -48,33 +48,34 @@ class AddForm extends React.Component {
         </label>
         <label className="form-label">
           <h3 className="form-heading">Number</h3>
-          <input
-            className="form-input-num"
-            type="number"
-            autoComplete="off"
-            name="number"
-            min="1"
-            pattern="^[0-9]+$"
-            title="Enter products quantity."
-            value={this.state.number}
-          />
+          <div className="buttons-container">
+            <button
+              className="number-less-button"
+              type="button"
+              onClick={this.onDecrementNumber}
+            >
+              -
+            </button>
+            <button
+              className="number-more-button"
+              type="button"
+              onClick={this.onIncrementNumber}
+            >
+              +
+            </button>
+          </div>
         </label>
-        <div className="buttons-container">
-          <button
-            className="number-more-button"
-            type="button"
-            onClick={this.onIncrementNumber}
-          >
-            +
-          </button>
-          <button
-            className="number-less-button"
-            type="button"
-            onClick={this.onDecrementNumber}
-          >
-            -
-          </button>
-        </div>
+        <input
+          className="form-input-num"
+          type="number"
+          autoComplete="off"
+          name="number"
+          min="1"
+          pattern="^[0-9]+$"
+          title="Enter products quantity."
+          value={this.state.number}
+        />
+
         <button className="form-btn" type="submit">
           Add
         </button>
